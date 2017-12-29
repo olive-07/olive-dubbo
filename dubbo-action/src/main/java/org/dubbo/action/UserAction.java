@@ -48,11 +48,12 @@ public class UserAction {
 	public void return_str(@RequestBody String body, Writer writer,
 			@RequestHeader Map<String, String> mp) {
 		try {
-			Map<String, Object> m = new HashMap<String, Object>();
+			Map<String, Object> m = new HashMap<>(16);
 			JSONObject jsonObject = JSONObject.parseObject(body);
 			String code = "";
-			if (StrKit.notBlank(mp.get("v"))) {
-				if ("1.0".equals(mp.get("v"))) {
+			String s = mp.get("v");
+			if (StrKit.notBlank(s)) {
+				if ("1.0".equals(s)) {
 					code = "1";
 				} else {
 					code = "401";
