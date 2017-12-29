@@ -10,6 +10,7 @@ public class User implements Serializable {
 
 	/**
 	 * @return the userid
+	 *
 	 */
 	public int getUserid() {
 		return userid;
